@@ -1,28 +1,26 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <img alt="Vue logo" src="./assets/logo.png">
+        <Dialog id="dialog" @after-hide="clearData" toggleClass="btn btn-sm btn-primary" :hideToggle="false"
+                toggleTitle="Toggle Modal" title="Dialog" size="sm" position="top-center" transition="slide-top">
+            <img alt="Vue logo" src="./assets/logo.png">
+        </Dialog>
+
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Dialog from './components/Dialog'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
+    components: {
+        Dialog,
+    },
+    methods: {
+        clearData() {
+            // alert(123456)
+        }
+    }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

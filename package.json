@@ -1,42 +1,73 @@
 {
-  "name": "vue-advance-dialog",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
+    "name": "vue-advance-dialog",
+    "version": "0.0.1",
+    "private": false,
+    "description": "Create your dialog or modal with vue-advance-dialog.",
+    "scripts": {
+
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint"
     },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
+    "files": [
+        "dist/*"
     ],
-    "parserOptions": {
-      "parser": "babel-eslint"
+    "dependencies": {
+        "core-js": "^3.6.5",
+        "tiny-emitter": "^2.1.0",
+        "vue": "^2.6.11"
     },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "~4.5.0",
+        "@vue/cli-plugin-eslint": "~4.5.0",
+        "@vue/cli-service": "~4.5.0",
+        "babel-eslint": "^10.1.0",
+        "bili": "^4.5.2",
+        "eslint": "^6.7.2",
+        "eslint-plugin-vue": "^6.2.2",
+        "node-sass": "^6.0.1",
+        "rollup-plugin-vue": "^6.0.0",
+        "sass-loader": "^10",
+        "style-loader": "^3.3.0",
+        "vue-template-compiler": "^2.6.14"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "eslint:recommended"
+        ],
+        "parserOptions": {
+            "parser": "babel-eslint"
+        },
+        "rules": {}
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/im-fahad/vue-advance-dialog.git"
+    },
+    "keywords": [
+        "vue-dialog",
+        "dialog",
+        "nuxt-dialog",
+        "vue-advance-dialog",
+        "advance-dialog",
+        "modal",
+        "vue-modal",
+        "nuxt-modal"
+    ],
+    "author": "al_fahad",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/im-fahad/vue-advance-dialog/issues"
+    },
+    "homepage": "https://github.com/im-fahad/vue-advance-dialog#readme"
 }

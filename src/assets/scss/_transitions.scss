@@ -1,0 +1,232 @@
+//fade
+.fade-enter-active, .fade-leave-active {
+    opacity: 0;
+    transition: opacity .4s;
+}
+
+.fade-enter, .fade-leave-to, .fade-leave-active {
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+
+//in-out
+.in-out-enter-active, .in-out-leave-active {
+    transition: opacity .5s;
+    transform: translateY(0);
+}
+
+.in-out-enter, .in-out-leave-to, .in-out-leave-active {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+//slide-fade
+.slide-fade-enter-active {
+    transition: all .4s ease;
+    transform: translateX(10px);
+}
+
+.slide-fade-leave-active {
+    transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    transform: translateX(10px);
+}
+
+.slide-fade-enter, .slide-fade-leave-to, .slide-fade-leave-active
+    /* .slide-fade-leave-active below version 2.1.8 */
+{
+    transform: translateX(-10px);
+    opacity: 0;
+}
+
+//bounce
+.bounce-enter-active {
+    animation: bounce-in .5s;
+}
+
+.bounce-leave-active {
+    animation: bounce-in .5s reverse;
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+//slide
+.slide-right-to-left-enter-active {
+    animation: slide-right-to-left-in .3s ease-in-out;
+}
+
+@keyframes slide-right-to-left-in {
+    0% {
+        transform: translateX(100%) scale(.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.slide-right-to-left-leave-active {
+    animation: slide-right-to-left-out .3s ease-in-out;
+}
+
+@keyframes slide-right-to-left-out {
+    0% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%) scale(.8);
+        opacity: 0;
+    }
+}
+
+//slide-right
+.slide-right-enter-active{
+    animation: slide-right-in .3s ease-in-out;
+}
+@keyframes slide-right-in {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-right-leave-active{
+    animation: slide-right-out .3s ease-in-out;
+}
+@keyframes slide-right-out {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+//slide-left
+.slide-left-enter-active{
+    animation: slide-left-in .5s ease-in-out;
+}
+@keyframes slide-left-in {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.slide-left-leave-active{
+    animation: slide-left-out .2s ease-in-out;
+}
+@keyframes slide-left-out {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+//zoom
+.zoom-enter-active {
+    animation: zoom-in .5s ease-in-out;
+}
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(.1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.zoom-leave-active {
+    animation: zoom-out .2s ease-in-out;
+}
+
+@keyframes zoom-out {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(.1);
+        opacity: 0;
+    }
+}
+
+
+//dialog-fade
+.dialog-zoom-enter-active {
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+
+.dialog-zoom-leave-active {
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+//dialog-zoom
+.dialog-zoom-enter-active {
+    animation: zoom-in .3s ease-in-out;
+}
+
+.dialog-zoom-leave-active {
+    animation: zoom-out .2s ease-in-out;
+}
+
+//dialog-slide-top
+.dialog-slide-top-enter-active {
+    animation: slide-top-in .2s ease-in-out;
+}
+
+@keyframes slide-top-in {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.dialog-slide-top-leave-active {
+    animation: slide-top-out .2s ease-in-out;
+}
+
+@keyframes slide-top-out {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
