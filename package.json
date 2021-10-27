@@ -1,16 +1,17 @@
 {
     "name": "vue-advance-dialog",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "private": false,
     "description": "Create your dialog or modal with vue-advance-dialog.",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
-        "lint": "vue-cli-service lint"
+        "lint": "vue-cli-service lint",
+        "build-library": "vue-cli-service build --target lib --name vue-advance-dialog ./src/index.js"
     },
+    "main": "./dist/ dist/vue-advance-dialog.common.js",
     "files": [
-        "dist/*",
-        "src/*"
+        "dist/*"
     ],
     "dependencies": {
         "core-js": "^3.6.5",
@@ -22,7 +23,6 @@
         "@vue/cli-plugin-eslint": "~4.5.0",
         "@vue/cli-service": "~4.5.0",
         "babel-eslint": "^10.1.0",
-        "bili": "^4.5.2",
         "eslint": "^6.7.2",
         "eslint-plugin-vue": "^6.2.2",
         "node-sass": "^6.0.1",

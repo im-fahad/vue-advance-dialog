@@ -184,7 +184,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
-    @import "../assets/scss/dialog";
-    @import "../assets/scss/transitions";
-</style>
+<!--<style lang="scss">-->
+<!--    @import "../assets/scss/dialog";-->
+<!--    @import "../assets/scss/transitions";-->
+<!--</style>-->
