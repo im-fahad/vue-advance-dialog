@@ -87,6 +87,10 @@
         cursor: pointer;
         z-index: 1;
         background-color: rgba(2, 11, 44, .6);
+
+        &.cursor-default{
+            cursor: initial;
+        }
     }
 
     &__content {

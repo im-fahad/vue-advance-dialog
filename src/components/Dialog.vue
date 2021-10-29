@@ -1,6 +1,6 @@
 <template>
     <div :id="id" class="g-dialog" :class="containerClass">
-        <button v-if="!hideToggle" class="g-dialog__toggle" type="button"
+        <button v-if="toggleTitle || this.$slots['toggle']" class="g-dialog__toggle" type="button"
                 :class="toggleClass" @click="showDialog"
                 :disabled="disabled">
             {{ toggleTitle ? toggleTitle : '' }}
@@ -9,22 +9,23 @@
 
         <transition name="dialog-fade">
             <div class="g-dialog__inner" :class="position" v-if="isActive">
-                <div class="g-dialog__overlay" @click="hideDialog"></div>
+                <div class="g-dialog__overlay" :class="!outsideClickClose ? 'cursor-default':''"
+                     @click="outsideClickHide"></div>
                 <transition :name="'dialog-'+transition">
                     <div class="g-dialog__content" :class="'g-dialog__content--'+size + '' + contentClass"
                          v-if="activated">
-                        <button v-if="!hideCloseButton" type="button" class="g-dialog__close-btn" @click="hideDialog">
+                        <button v-if="closeButton" type="button" class="g-dialog__close-btn" @click="hideDialog">
                             <img src="../assets/images/icons/close.png" class="g-dialog__close-btn-icon" alt="Close">
                         </button>
-                        <div class="g-dialog__content-header" :class="contentHeaderClass" v-if="!hideHeader">
+                        <div class="g-dialog__content-header" :class="contentHeaderClass"
+                             v-if="title || this.$slots['header']">
                             <slot name="header"/>
                             <h5 v-if="title" class="g-dialog__content-title" v-text="title"></h5>
                         </div>
-                        <div v-if="!hideBody" class="g-dialog__content-inner" :class="contentInnerClass">
+                        <div class="g-dialog__content-inner" :class="contentInnerClass">
                             <slot/>
                         </div>
-                        <slot v-else/>
-                        <div class="g-dialog__content-footer" :class="contentFooterClass" v-if="!hideFooter">
+                        <div class="g-dialog__content-footer" :class="contentFooterClass" v-if="this.$slots['footer']">
                             <slot name="footer"/>
                         </div>
                     </div>
@@ -46,42 +47,32 @@ export default {
             required: true,
             default: 'g-dialog_' + Number(Math.random() * 100).toFixed(0)
         },
-        toggleClass: {
-            type: String,
-            required: false,
-            default: 'btn btn-primary'
-        },
         toggleTitle: {
             type: String,
             required: false,
             default: ''
         },
-        hideHeader: {
-            type: Boolean,
+        toggleClass: {
+            type: String,
             required: false,
-            default: false
-        },
-        hideBody: {
-            type: Boolean,
-            required: false,
-            default: false
+            default: 'btn btn-primary'
         },
         disabled: {
             type: Boolean,
             required: false,
             default: false
         },
-        hideFooter: {
+        title: {
+            type: String,
+            required: false,
+            default: ''
+        },
+        closeButton: {
             type: Boolean,
             required: false,
             default: true
         },
-        hideCloseButton: {
-            type: Boolean,
-            required: false,
-            default: false
-        },
-        hideToggle: {
+        outsideClickClose: {
             type: Boolean,
             required: false,
             default: true
@@ -89,7 +80,7 @@ export default {
         size: {
             type: String,
             required: false,
-            default: 'xs'
+            default: 'sm'
             // lg, md, sm, xs
         },
         position: {
@@ -97,11 +88,6 @@ export default {
             required: false,
             default: 'top-center'
             // center-center, center-left, center-right, top-center, top-left, top-right, bottom-center, bottom-left, bottom-right
-        },
-        title: {
-            type: String,
-            required: false,
-            default: ''
         },
         containerClass: {
             type: String,
@@ -167,7 +153,7 @@ export default {
     methods: {
         showDialog() {
             this.isActive = true
-            this.$emit('after-show')
+            this.$emit('show')
             setTimeout(() => {
                 this.activated = true
             }, 100)
@@ -175,10 +161,15 @@ export default {
 
         hideDialog() {
             this.activated = false
-            this.$emit('after-hide')
+            this.$emit('hide')
             return setTimeout(() => {
                 this.isActive = false
             }, 200)
+        },
+
+        outsideClickHide(){
+            if (!this.outsideClickClose) return;
+            this.hideDialog()
         }
     }
 };
