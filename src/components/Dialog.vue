@@ -14,7 +14,7 @@
                     <div class="g-dialog__content" :class="'g-dialog__content--'+size + '' + contentClass"
                          v-if="activated">
                         <button v-if="!hideCloseButton" type="button" class="g-dialog__close-btn" @click="hideDialog">
-                            <img src="../assets/images/icons/close.png" class="g-dialog__close-btn-icon" alt="Close">
+                            <!--                            <img src="../assets/images/icons/close.png" class="g-dialog__close-btn-icon" alt="Close">-->
                         </button>
                         <div class="g-dialog__content-header" :class="contentHeaderClass" v-if="!hideHeader">
                             <slot name="header"/>
@@ -184,7 +184,7 @@ export default {
 };
 </script>
 
-<!--<style lang="scss">-->
-<!--    @import "../assets/scss/dialog";-->
-<!--    @import "../assets/scss/transitions";-->
-<!--</style>-->
+<style lang="scss">
+@import "../assets/scss/dialog";
+@import "../assets/scss/transitions";
+</style>

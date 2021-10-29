@@ -1,9 +1,23 @@
 import VueAdvanceDialog from './components/Dialog.vue'
-import EventHub from "../plugins/EventHub";
 
-export default {
-    install(Vue) {
-        Vue.component("vue-advance-dialog", VueAdvanceDialog);
-        Vue.prototype.$eventHub = EventHub
-    }
+export function install(Vue) {
+    if (install.installed) return;
+    install.installed = true;
+    Vue.component('vue-advance-dialog', VueAdvanceDialog);
+}
+
+const plugin = {
+    install,
 };
+
+let GlobalVue = null;
+if (typeof window !== 'undefined') {
+    GlobalVue = window.Vue;
+} else if (typeof global !== 'undefined') {
+    GlobalVue = global.Vue;
+}
+if (GlobalVue) {
+    GlobalVue.use(plugin);
+}
+
+export default VueAdvanceDialog;
