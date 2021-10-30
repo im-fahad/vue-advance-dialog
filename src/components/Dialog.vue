@@ -19,8 +19,8 @@
                         </button>
                         <div class="g-dialog__content-header" :class="contentHeaderClass"
                              v-if="title || this.$slots['header']">
-                            <slot name="header"/>
-                            <h5 v-if="title" class="g-dialog__content-title" v-text="title"></h5>
+                            <slot v-if="!title && this.$slots['header']" name="header"/>
+                            <h5 v-if="title && !this.$slots['header']" class="g-dialog__content-title" v-text="title"></h5>
                         </div>
                         <div class="g-dialog__content-inner" :class="contentInnerClass">
                             <slot/>
