@@ -1,6 +1,6 @@
 {
     "name": "vue-advance-dialog",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "private": false,
     "description": "VueAdvanceDialog is a flexible vue component. You can easily use this component for your vue or nuxt project. It has many options for customization",
     "scripts": {

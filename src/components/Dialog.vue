@@ -3,8 +3,8 @@
         <button v-if="toggleTitle || this.$slots['toggle']" class="g-dialog__toggle" type="button"
                 :class="toggleClass" @click="showDialog"
                 :disabled="disabled">
-            {{ toggleTitle ? toggleTitle : '' }}
-            <slot name="toggle"/>
+            {{ toggleTitle && !this.$slots['toggle'] ? toggleTitle : '' }}
+            <slot v-if="!toggleTitle" name="toggle"/>
         </button>
 
         <transition name="dialog-fade">
