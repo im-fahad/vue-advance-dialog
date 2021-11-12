@@ -38,7 +38,7 @@ components: {
 
 ## Events
 
-#### @show
+### @show
 The `show` event fires immediately after opening the dialog.
 
 ```html
@@ -55,7 +55,7 @@ methods: {
 }
 ```
 
-#### @hide
+### @hide
 After closing the dialog, the `hide` event fires.
 
 ```html
@@ -72,17 +72,17 @@ methods: {
 }
 ```
 
-#### `show` or `hide` the dialog in two different ways
+### `show` or `hide` the dialog in two different ways
 
 ***First Way:*** 
-You can show the dialog by clicking the component button. Set a value of `toggleTitle` prop, then it will generate a button. The dialog can be shown by clicking this button.
+You can show the dialog by clicking the component button. Set a value of `toggleTitle` prop, then it will generate a button. The dialog will be shown by clicking this button.
 
 ```Vue
 <vue-advance-dialog id="dialog" toggleTitle="Show Dialog"></vue-advance-dialog>
 ```
 Screenshot: https://www.awesomescreenshot.com/image/15903525?key=ec1d21290a089f86b4edfc0e7e7b0a05
 
-Also, you can use `toggle` scope to set toggle button content. When you use `toggle` scope you have to skip to set `toggleTitle`.
+Alternatively, you can use `toggle` Slot to set toggle button content.
 
 ```html
 <vue-advance-dialog id="dialog">
@@ -92,7 +92,7 @@ Also, you can use `toggle` scope to set toggle button content. When you use `tog
 	</template>
 </vue-advance-dialog>
 ```
->You can use either the `toggle` scope or the `toggleTitle` prop, can't use both. If you don't set `toggleTitle` or `toggle` scope, then no button will be generated. 
+>You can use either the `toggle` Slot or the `toggleTitle` Prop to set toggle button title. But you can't use both. If you don't set any of `toggleTitle` Prop or `toggle` Slot, then no button will be generated.
 
 
 ***Second Way:***
@@ -146,8 +146,8 @@ export default {
 ```
 ---
 
-## Scopes
-#### toggle
+## Slots
+### toggle
 By using `toggle`, you can set your custom content in toggle button.
 
 ```html
@@ -159,8 +159,8 @@ By using `toggle`, you can set your custom content in toggle button.
 </vue-advance-dialog>
 ```
 
-#### header
-Custom content for Dialog header, could be set by using `header` scope.
+### header
+Custom content for Dialog header, could be set by using `header` Slot.
 
 ```html
 <vue-advance-dialog id="dialog">
@@ -170,8 +170,8 @@ Custom content for Dialog header, could be set by using `header` scope.
 </vue-advance-dialog>
 ```
 
-#### footer
-Similarly use `footer` scope for footer content.
+### footer
+Similarly use `footer` Slot for footer content.
 
 ```html
 <vue-advance-dialog id="dialog">
@@ -194,7 +194,7 @@ Similarly use `footer` scope for footer content.
 > Use `disabled` prop To disable the component `toggle button`.
 
 - ***title:*** `String`  `default: ''`
-> Set the dialog `title` through this prop or alternatively use `header` scope.
+> Set the dialog `title` through this prop or alternatively use `header` Slot.
 
 - ***closeButton:*** `Boolean`  `default: true`
 > Remove the component `close button` by using this prop.
