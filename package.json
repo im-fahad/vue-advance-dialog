@@ -2,7 +2,7 @@
     "name": "vue-advance-dialog",
     "version": "0.1.1",
     "private": false,
-    "description": "VueAdvanceDialog is a flexible vue component. You can easily use this component for your vue or nuxt project. It has many options for customization",
+    "description": "VueAdvanceDialog is a flexible vue component for popup dialog or modal. You can easily use this component in any of your vue or nuxt projects. It has different useful props and events to customize the component as your requirement.",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
